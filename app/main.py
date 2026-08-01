@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from typing import List, Optional
 
 import httpx
-from fastapi import BackgroundTasks, Depends, FastAPI, Header, HTTPException, Request, status
+from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException, Request, status
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
@@ -333,14 +333,14 @@ def create_share_link(
     return ShareLinkResponse(
         token=token,
         expires_at=expires_at,
-        share_url=f"/shared/{token}",
+        share_url=f"/share/{token}",
     )
 
 
-@app.get("/shared/{token}", response_model=SharedScanView)
+@app.get("/share/{token}", response_model=SharedScanView)
 def access_shared_scan(
     token: str,
-    x_share_password: Optional[str] = Header(default=None),
+    password: Optional[str] = None,
     db: Session = Depends(get_db),
 ):
     link = db.query(models.SharedLink).filter(
@@ -353,9 +353,9 @@ def access_shared_scan(
         raise HTTPException(status_code=410, detail="Link has expired")
 
     if link.password_hash:
-        if not x_share_password:
+        if not password:
             raise HTTPException(status_code=401, detail="Password required")
-        if not verify_password(x_share_password, link.password_hash):
+        if not verify_password(password, link.password_hash):
             raise HTTPException(status_code=403, detail="Incorrect password")
 
     scan = link.scan

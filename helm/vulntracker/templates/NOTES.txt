@@ -1,0 +1,20 @@
+VulnTracker API has been deployed to namespace "{{ .Values.namespace.name }}".
+
+1. Check that the ExternalSecret has synced successfully before pods can start:
+   kubectl get externalsecret --namespace {{ .Values.namespace.name }} {{ include "vulntracker.fullname" . }}-secrets
+
+2. Check pod status:
+   kubectl get pods --namespace {{ .Values.namespace.name }} -l "app.kubernetes.io/name={{ include "vulntracker.name" . }},app.kubernetes.io/instance={{ .Release.Name }}"
+
+3. This chart exposes the API via a ClusterIP Service only (no Ingress/LoadBalancer
+   is provisioned here — that is expected to be handled separately, e.g. by an
+   ingress-nginx Ingress resource in the cluster). To access it locally:
+
+   export POD_NAME=$(kubectl get pods --namespace {{ .Values.namespace.name }} -l "app.kubernetes.io/name={{ include "vulntracker.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+   kubectl --namespace {{ .Values.namespace.name }} port-forward $POD_NAME 8080:{{ .Values.service.targetPort }}
+   curl http://127.0.0.1:8080/health
+
+NOTE: The NetworkPolicy installed by this chart only allows ingress from pods in
+the "{{ .Values.networkPolicy.ingressNamespaceLabel }}" namespace, so port-forward
+above works for local debugging, but a Pod in any other namespace will not be
+able to reach this Service directly.

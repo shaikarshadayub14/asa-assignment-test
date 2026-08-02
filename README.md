@@ -106,7 +106,7 @@ curl http://localhost:8000/health
 
 The image runs as a non-root user, defines a `HEALTHCHECK` against `/health`, and reads all secrets from the environment — nothing is baked into the image. The same build/run/health-check flow runs automatically in CI (`.github/workflows/ci.yml`), which then pushes the image to Docker Hub as `arshadayubshaik/vulntracker-api:latest` and `:<git-sha>`.
 
-The `terraform/` directory deploys this image to an existing Kubernetes cluster, sourcing secrets from AWS Secrets Manager rather than from `.env` or hardcoded manifests — see `terraform/secrets.tf`.
+The `helm/vulntracker/` chart deploys this image to an existing Kubernetes cluster, sourcing secrets from AWS Secrets Manager (via the External Secrets Operator) rather than from `.env` or hardcoded manifests — see `helm/vulntracker/README.md` and `helm/vulntracker/values.yaml`'s `secretsManager` block.
 
 ---
 

@@ -1,0 +1,83 @@
+# Default values for the vulntracker chart.
+
+namespace:
+  create: true
+  name: vulntracker
+
+replicaCount: 2
+
+image:
+  repository: arshadayubshaik/vulntracker-api
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+# Secrets are never set here. They are read from AWS Secrets Manager at
+# deploy time via the External Secrets Operator (https://external-secrets.io),
+# which must already be installed in the target cluster — this chart does not
+# provision the operator or the underlying secret, only consumes them, the
+# same way terraform/secrets.tf reads an existing AWS Secrets Manager entry
+# via a `data` block rather than creating one.
+secretsManager:
+  secretName: "vulntracker/app-secrets"
+  refreshInterval: "1h"
+  # Name of the ClusterSecretStore configured to point at AWS Secrets Manager.
+  clusterSecretStoreName: "aws-secrets-manager"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 1000
+  runAsGroup: 1000
+  fsGroup: 1000
+  seccompProfile:
+    type: RuntimeDefault
+
+securityContext:
+  runAsNonRoot: true
+  runAsUser: 1000
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  # readOnlyRootFilesystem is intentionally left unset: the app falls back to
+  # a local SQLite file under /app when DATABASE_URL points at sqlite. A real
+  # production DATABASE_URL (e.g. RDS/Cloud SQL) would remove this constraint.
+
+automountServiceAccountToken: false
+
+livenessProbe:
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 10
+  periodSeconds: 15
+
+readinessProbe:
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+# Restricts ingress to the API pod to only the ingress controller namespace,
+# and egress to DNS plus the notify service — mirrors terraform/network_policy.tf.
+networkPolicy:
+  enabled: true
+  ingressNamespaceLabel: "ingress-nginx"
+  notifyServicePort: 3001
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

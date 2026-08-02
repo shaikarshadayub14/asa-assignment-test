@@ -77,6 +77,39 @@ npm test
 
 ---
 
+## Docker (Python API)
+
+Build the image from the repo root (the `Dockerfile` copies `app/` and installs `requirements.txt`):
+
+```bash
+docker build -t vulntracker-api .
+```
+
+Run it, providing the same env vars documented in `.env.example`:
+
+```bash
+docker run -d --name vulntracker-api -p 8000:8000 \
+  -e SECRET_KEY="<your-secret>" \
+  -e DATABASE_URL="sqlite:///./vulntracker.db" \
+  -e DB_USER="vulntracker_app" \
+  -e DB_PASSWORD="<your-db-password>" \
+  -e ADMIN_API_KEY="<your-admin-key>" \
+  -e NOTIFY_SERVICE_URL="http://host.docker.internal:3001" \
+  vulntracker-api
+```
+
+Verify it's up:
+
+```bash
+curl http://localhost:8000/health
+```
+
+The image runs as a non-root user, defines a `HEALTHCHECK` against `/health`, and reads all secrets from the environment — nothing is baked into the image. The same build/run/health-check flow runs automatically in CI (`.github/workflows/ci.yml`), which then pushes the image to Docker Hub as `arshadayubshaik/vulntracker-api:latest` and `:<git-sha>`.
+
+The `terraform/` directory deploys this image to an existing Kubernetes cluster, sourcing secrets from AWS Secrets Manager rather than from `.env` or hardcoded manifests — see `terraform/secrets.tf`.
+
+---
+
 ## Your Tasks
 
 ### Task 1 — Extend the App _(~1–1.5 hrs)_

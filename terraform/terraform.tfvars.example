@@ -1,0 +1,7 @@
+aws_region                  = "us-east-1"
+kubeconfig_path              = "~/.kube/config"
+kube_context                 = "vulntracker-cluster"
+namespace                    = "vulntracker"
+image                        = "arshadayubshaik/vulntracker-api:latest"
+replica_count                = 2
+secrets_manager_secret_name  = "vulntracker/app-secrets"

@@ -20,3 +20,9 @@ env/
 htmlcov/
 node_modules/
 .claude/
+terraform/.terraform/
+terraform/*.tfvars
+!terraform/terraform.tfvars.example
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/.terraform.tfstate.lock.info

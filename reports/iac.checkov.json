@@ -1,0 +1,2350 @@
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_K8S_34",
+                "bc_check_id": null,
+                "check_name": "Ensure that Tiller (Helm v2) is not deployed",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/metadata/[0]/labels"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.Tiller",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_8",
+                "bc_check_id": null,
+                "check_name": "Liveness Probe Should be Configured",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "spec/[0]/container/[0]/liveness_probe/[0]"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.LivenessProbe",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_13",
+                "bc_check_id": null,
+                "check_name": "Memory requests should be set",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.MemoryRequests",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_20",
+                "bc_check_id": null,
+                "check_name": "Containers should not run with allowPrivilegeEscalation",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.AllowPrivilegeEscalation",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_26",
+                "bc_check_id": null,
+                "check_name": "Do not specify hostPort unless absolutely necessary",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.HostPort",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_16",
+                "bc_check_id": null,
+                "check_name": "Do not admit privileged containers",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.PrivilegedContainer",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_15",
+                "bc_check_id": null,
+                "check_name": "Image Pull Policy should be Always",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.ImagePullPolicyAlways",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_27",
+                "bc_check_id": null,
+                "check_name": "Do not expose the docker daemon socket to containers",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.DockerSocketVolume",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_12",
+                "bc_check_id": null,
+                "check_name": "Memory Limits should be set",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.MemoryLimits",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_37",
+                "bc_check_id": null,
+                "check_name": "Minimise the admission of containers with capabilities assigned",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.MinimiseCapabilities",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_10",
+                "bc_check_id": null,
+                "check_name": "CPU requests should be set",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.CPURequests",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_39",
+                "bc_check_id": null,
+                "check_name": "Do not use the CAP_SYS_ADMIN linux capability",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.AllowedCapabilitiesSysAdmin",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_19",
+                "bc_check_id": null,
+                "check_name": "Do not admit containers wishing to share the host network namespace",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/spec/[0]/host_network"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.SharedHostNetworkNamespace",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_9",
+                "bc_check_id": null,
+                "check_name": "Readiness Probe Should be Configured",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/spec/[0]/container/[0]/readiness_probe/[0]"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.ReadinessProbe",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_159",
+                "bc_check_id": null,
+                "check_name": "Do not admit privileged containers",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.DangerousGitSync",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_17",
+                "bc_check_id": null,
+                "check_name": "Do not admit containers wishing to share the host process ID namespace",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/spec/[0]/host_pid"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.ShareHostPID",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_18",
+                "bc_check_id": null,
+                "check_name": "Do not admit containers wishing to share the host IPC namespace",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/spec/[0]/host_ipc"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.ShareHostIPC",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_28",
+                "bc_check_id": null,
+                "check_name": "Minimize the admission of containers with the NET_RAW capability",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.DropCapabilities",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_25",
+                "bc_check_id": null,
+                "check_name": "Minimize the admission of containers with added capability",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.AllowedCapabilities",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_29",
+                "bc_check_id": null,
+                "check_name": "Apply security context to your pods, deployments and daemon_sets",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.PodSecurityContext",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_30",
+                "bc_check_id": null,
+                "check_name": "Apply security context to your pods and containers",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.ContainerSecurityContext",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_21",
+                "bc_check_id": null,
+                "check_name": "The default namespace should not be used",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.DefaultNamespace",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_11",
+                "bc_check_id": null,
+                "check_name": "CPU Limits should be set",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.CPULimits",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AWS_41",
+                "bc_check_id": null,
+                "check_name": "Ensure no hard coded AWS access key and secret key exists in provider",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/providers.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/providers.tf",
+                "repo_file_path": "/terraform/providers.tf",
+                "file_line_range": [
+                    1,
+                    3
+                ],
+                "resource": "aws.default",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.provider.aws.credentials",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/providers.tf",
+                "breadcrumbs": {
+                    "region": [
+                        {
+                            "type": "variable",
+                            "name": "aws_region",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_21",
+                "bc_check_id": null,
+                "check_name": "The default namespace should not be used",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/secrets.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/secrets.tf",
+                "repo_file_path": "/terraform/secrets.tf",
+                "file_line_range": [
+                    13,
+                    29
+                ],
+                "resource": "kubernetes_secret.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.DefaultNamespace",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/secrets.tf",
+                "breadcrumbs": {
+                    "data.ADMIN_API_KEY": [
+                        {
+                            "type": "locals",
+                            "name": "app_secret_values",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/secrets.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "data.NOTIFY_SERVICE_URL": [
+                        {
+                            "type": "locals",
+                            "name": "app_secret_values",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/secrets.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "data.DATABASE_URL": [
+                        {
+                            "type": "locals",
+                            "name": "app_secret_values",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/secrets.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "data.DB_USER": [
+                        {
+                            "type": "locals",
+                            "name": "app_secret_values",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/secrets.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "data.SECRET_KEY": [
+                        {
+                            "type": "locals",
+                            "name": "app_secret_values",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/secrets.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "data.DB_PASSWORD": [
+                        {
+                            "type": "locals",
+                            "name": "app_secret_values",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/secrets.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_44",
+                "bc_check_id": null,
+                "check_name": "Ensure that the Tiller Service (Helm v2) is deleted",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/service.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/service.tf",
+                "repo_file_path": "/terraform/service.tf",
+                "file_line_range": [
+                    1,
+                    19
+                ],
+                "resource": "kubernetes_service.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.TillerService",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/service.tf"
+            },
+            {
+                "check_id": "CKV_K8S_21",
+                "bc_check_id": null,
+                "check_name": "The default namespace should not be used",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/service.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/service.tf",
+                "repo_file_path": "/terraform/service.tf",
+                "file_line_range": [
+                    1,
+                    19
+                ],
+                "resource": "kubernetes_service.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.DefaultNamespace",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/service.tf"
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_K8S_22",
+                "bc_check_id": null,
+                "check_name": "Use read-only filesystem for containers where possible",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/spec/[0]/container/[0]/security_context/[0]/read_only_root_filesystem"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.ReadonlyRootFilesystem",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_35",
+                "bc_check_id": null,
+                "check_name": "Prefer using secrets as files over secrets as environment variables",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/spec/[0]/container/[0]/env_from/[0]/secret_ref"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.Secrets",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_14",
+                "bc_check_id": null,
+                "check_name": "Image Tag should be fixed - not latest or blank",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/spec/[0]/container/[0]/image"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.ImageTagFixed",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_K8S_43",
+                "bc_check_id": null,
+                "check_name": "Image should use digest",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "spec/[0]/template/[0]/spec/[0]/container/[0]/image"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/deployment.tf",
+                "file_abs_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "repo_file_path": "/terraform/deployment.tf",
+                "file_line_range": [
+                    1,
+                    98
+                ],
+                "resource": "kubernetes_deployment.app",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.kubernetes.ImageDigest",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/deployment.tf",
+                "breadcrumbs": {
+                    "spec.template.spec.container.image": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec.container": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template.spec": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.template": [
+                        {
+                            "type": "variable",
+                            "name": "image",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ],
+                    "spec.replicas": [
+                        {
+                            "type": "variable",
+                            "name": "replica_count",
+                            "path": "/Users/shaik.ayub/Documents/asa-assignment/terraform/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 27,
+        "failed": 4,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 5,
+        "checkov_version": "3.3.9"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

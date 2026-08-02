@@ -1,14 +1,12 @@
 # Remediation Plan — Deferred Findings
 
-This covers every finding from `docs/findings.md` marked "not fixed." For each: what remains exposed, how much work fixing it would take, and what already reduces the risk in the meantime. Findings already fixed in this submission (SQL injection, JWT `alg=none`, hardcoded secrets, plaintext password logging, weak share-token PRNG) are not repeated here.
+This covers every finding from `docs/findings.md` marked "not fixed." For each: what remains exposed, how much work fixing it would take, and what already reduces the risk in the meantime. Findings already fixed in this submission (SQL injection, JWT `alg=none`, hardcoded secrets, plaintext password logging, weak share-token PRNG, and the `GET /scans/{scan_id}` IDOR below) are not repeated in the tables that follow.
 
-## Critical
+## Fixed after initial triage
 
 ### #3 — Broken access control on `GET /scans/{scan_id}` (IDOR)
 
-- **Residual risk:** Any authenticated user can read any other user's scan record — title, description, CVE ID, affected component, and remediation notes — by incrementing an integer ID. This was deliberately left unfixed for this submission to keep the change under review small and auditable (the three required fixes plus the Task 1 PRNG fix already meet the "at least 3, one in Task 1" bar); it is not a statement that this is acceptable in production.
-- **Remediation effort:** Trivial — under 30 minutes. Add the same `filter(models.ScanResult.owner_id == current_user.id)` clause already used in `list_scans`, `update_scan`, and `delete_scan` in `app/main.py`, and add a regression test asserting a second user gets a 404 rather than another user's data.
-- **Compensating controls:** None in place today beyond the fact that the endpoint requires a valid bearer token — it does not stop enumeration once a session exists. This should be treated as the single highest-priority fix in any follow-up.
+Originally deferred here as a "trivial, under 30 minutes" fix (see prior revision of this doc). On review, the risk (cross-tenant disclosure of unpatched-CVE data) was severe enough relative to the fix cost that it was fixed rather than left deferred: added the same `filter(models.ScanResult.owner_id == current_user.id)` clause already used by `list_scans`, `update_scan`, and `delete_scan` in `app/main.py`, plus two regression tests (`test_get_scan`, `test_get_scan_for_other_users_scan_not_found` in `tests/test_api.py`) asserting a second user gets a 404 rather than another user's data. All 21 tests pass.
 
 ## High
 

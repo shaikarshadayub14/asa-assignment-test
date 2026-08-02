@@ -24,6 +24,11 @@ jobs:
       - name: Run tests
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
+          NOTIFY_SERVICE_URL: ${{ secrets.NOTIFY_SERVICE_URL }}
         run: pytest tests/ -v
 
   test-notify:

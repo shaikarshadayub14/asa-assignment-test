@@ -50,6 +50,57 @@ jobs:
         run: npm test
         working-directory: notify
 
+  docker-build-and-push:
+    runs-on: ubuntu-latest
+    needs: [test]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t vulntracker-api:ci .
+
+      - name: Run container and verify health endpoint
+        run: |
+          docker run -d --name vulntracker-api-ci \
+            -p 8000:8000 \
+            -e SECRET_KEY="${{ secrets.SECRET_KEY }}" \
+            -e DATABASE_URL="${{ secrets.DATABASE_URL }}" \
+            -e DB_USER="${{ secrets.DB_USER }}" \
+            -e DB_PASSWORD="${{ secrets.DB_PASSWORD }}" \
+            -e ADMIN_API_KEY="${{ secrets.ADMIN_API_KEY }}" \
+            -e NOTIFY_SERVICE_URL="${{ secrets.NOTIFY_SERVICE_URL }}" \
+            vulntracker-api:ci
+
+          for i in $(seq 1 10); do
+            if curl -sf http://localhost:8000/health; then
+              echo "Health check passed"
+              exit 0
+            fi
+            sleep 2
+          done
+
+          echo "Health check failed"
+          docker logs vulntracker-api-ci
+          exit 1
+
+      - name: Stop container
+        if: always()
+        run: docker rm -f vulntracker-api-ci || true
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Tag and push image
+        run: |
+          docker tag vulntracker-api:ci ${{ secrets.DOCKERHUB_USERNAME }}/vulntracker-api:latest
+          docker tag vulntracker-api:ci ${{ secrets.DOCKERHUB_USERNAME }}/vulntracker-api:${{ github.sha }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/vulntracker-api:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/vulntracker-api:${{ github.sha }}
+
   # TODO (candidates): Add the following security scanning jobs.
   # Tool selection is your decision — document your choices in findings.md.
   #

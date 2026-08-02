@@ -1,14 +1,19 @@
-DATABASE_URL = "sqlite:///./vulntracker.db"
+import os
 
-SECRET_KEY = "v3ry-s3cr3t-jwt-k3y-do-not-share"
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DATABASE_URL = os.environ.get("DATABASE_URL", "sqlite:///./vulntracker.db")
+
+SECRET_KEY = os.environ["SECRET_KEY"]
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-# Database credentials (migrate to env vars before production deployment)
-DB_USER = "vulntracker_app"
-DB_PASSWORD = "Tr@cker2024!"
+DB_USER = os.environ.get("DB_USER")
+DB_PASSWORD = os.environ.get("DB_PASSWORD")
 
 # Internal service API key
-ADMIN_API_KEY = "sk-vt-prod-8f3a2b1c9d4e5f6a7b8c9d0e1f2a3b4c"
+ADMIN_API_KEY = os.environ.get("ADMIN_API_KEY")
 
-NOTIFY_SERVICE_URL = "http://localhost:3001"
+NOTIFY_SERVICE_URL = os.environ.get("NOTIFY_SERVICE_URL", "http://localhost:3001")
